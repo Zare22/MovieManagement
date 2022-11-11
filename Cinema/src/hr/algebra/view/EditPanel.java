@@ -121,9 +121,9 @@ public class EditPanel extends javax.swing.JPanel {
     private List<Person> directors;
     private List<Movie> movies;
 
-    private final DefaultListModel<Person> actorsListModel = new DefaultListModel<>();
-    private final DefaultListModel<Person> directorsListModel = new DefaultListModel<>();
-    private final DefaultListModel<Movie> moviesListModel = new DefaultListModel<>();
+    private DefaultListModel<Person> actorsListModel = new DefaultListModel<>();
+    private DefaultListModel<Person> directorsListModel = new DefaultListModel<>();
+    private DefaultListModel<Movie> moviesListModel = new DefaultListModel<>();
 
     private final DefaultListModel[] modelsList = new DefaultListModel[3];
     private final List[] allEntitiesList = new List[3];

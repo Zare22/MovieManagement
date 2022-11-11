@@ -10,6 +10,8 @@ import hr.algebra.utils.IconUtils;
 import hr.algebra.utils.MessageUtils;
 import hr.algebra.view.model.MovieTableViewModel;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -441,12 +443,26 @@ public class HomePanel extends javax.swing.JPanel {
         PersonCreator personCreator = new PersonCreator(main, true, (Person) comboBoxDirector.getSelectedItem());
         personCreator.checkDirector();
         personCreator.setVisible(true);
+        personCreator.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                fillActorsToComboBox();
+            }
+
+        });
     }//GEN-LAST:event_btnCrudDirectorActionPerformed
 
     private void btnCrudActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrudActorActionPerformed
         PersonCreator personCreator = new PersonCreator(main, true, (Person) comboBoxActor.getSelectedItem());
         personCreator.checkActor();
         personCreator.setVisible(true);
+        personCreator.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                fillActorsToComboBox();
+            }
+
+        });
     }//GEN-LAST:event_btnCrudActorActionPerformed
 
     private void actorsListKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_actorsListKeyReleased
@@ -543,7 +559,9 @@ public class HomePanel extends javax.swing.JPanel {
         new Thread(() -> {
             try {
                 tableModel = new MovieTableViewModel(repository.selectMovies());
-                tblMovies.setModel(tableModel);
+                if (tableModel != null) {
+                    tblMovies.setModel(tableModel);
+                }
             } catch (Exception ex) {
                 Logger.getLogger(HomePanel.class.getName()).log(Level.SEVERE, null, ex);
                 MessageUtils.showErrorMessage("Error", "Data loading issue");
@@ -595,6 +613,8 @@ public class HomePanel extends javax.swing.JPanel {
         lblImagePath.setText("");
         imgMovie.setIcon(new ImageIcon(getClass().getResource("/assets/no_image.png")));
         selectedMovie = null;
+        actorsListModel.clear();
+        actorsList.setModel(actorsListModel);
     }
 
     private void showMovie() {

@@ -41,6 +41,7 @@ public class Main extends javax.swing.JFrame {
         btnLogout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1288, 787));
 
         loginPanel.setPreferredSize(new java.awt.Dimension(1300, 750));
 
@@ -89,6 +90,8 @@ public class Main extends javax.swing.JFrame {
 
         tabbedPaneContent.addTab("Login", loginPanel);
 
+        registerPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
         lblRegisterUsername.setText("Username:");
 
         lblRegisterPassword.setText("Password:");
@@ -114,7 +117,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(txtFieldRegisterUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                     .addComponent(btnRegister, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtFieldRegisterPassword))
-                .addContainerGap(557, Short.MAX_VALUE))
+                .addContainerGap(555, Short.MAX_VALUE))
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +132,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(txtFieldRegisterPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(btnRegister)
-                .addContainerGap(374, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
 
         tabbedPaneContent.addTab("Register", registerPanel);

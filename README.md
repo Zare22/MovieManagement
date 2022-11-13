@@ -1,6 +1,6 @@
 # Movie Management
 
-Desktop application written in Java. Personal RSS parses created, repository pattern, connecting to SQL and various other topics covered. Database initialization script is inside of the Cinema folder. The application itself allows CRUD operations on various entites(Movies, Actors, Directors), adding/removing actors and directors to/from a movie. </br>
+Desktop application written in Java. Personal RSS parses created, repository pattern, connecting to SQL and various other topics covered. Database initialization script is inside of the Cinema folder. The application itself allows CRUD operations on various entities(Movies, Actors, Directors), adding/removing actors and directors to/from a movie. </br>
 
 Below you can find short overview of screens:
 
